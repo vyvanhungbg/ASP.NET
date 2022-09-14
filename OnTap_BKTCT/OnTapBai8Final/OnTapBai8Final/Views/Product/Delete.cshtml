@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<style>
+    tr td {
+        padding: 12px;
+    }
+</style>
+<table border="1">
+    <tr>
+        <th>Mã hàng</th>
+        <td>@Model.ProductID</td>
+    </tr>
+
+    <tr>
+        <th>Tên hàng</th>
+        <td>@Model.ProductName)</td>
+    </tr>
+
+
+
+    <tr>
+        <th>Giá bán</th>
+        <td>@Model.Price</td>
+    </tr>
+
+
+    <tr>
+        <th>Loại hàng</th>
+        <td>@Model.Catalogy.CatalogyName</td>
+    </tr>
+
+    <tr>
+        <th>Hình ảnh</th>
+        <td>@Model.Image</td>
+    </tr>
+
+
+
+
+</table>
+@using (Html.BeginForm("Delete", "Product", FormMethod.Post))
+{
+
+    <input type="submit" value="Xóa" />
+}
+

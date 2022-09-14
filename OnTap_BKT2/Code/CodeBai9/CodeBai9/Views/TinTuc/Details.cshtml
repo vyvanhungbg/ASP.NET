@@ -1,0 +1,39 @@
+﻿@model CodeBai9.Models.Tintuc
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<style>
+    th, td {
+        padding: 12px;
+    }
+</style>
+<table border="1">
+    <caption style="text-align: center"><h2>Tin tức</h2></caption>
+    <tr>
+        <th>Mã tin</th>
+        <td>@Model.IdTin</td>
+    </tr>
+
+    <tr>
+        <th>Tiêu đề</th>
+        <td>@Model.Tieudetin</td>
+    </tr>
+
+    <tr>
+        <th>Nội dung</th>
+        <td>@Model.Noidungtin</td>
+    </tr>
+
+    <tr>
+        <th>Mã loại</th>
+        <td>@Model.Theloaitin.Tentheloai</td>
+    </tr>
+</table>
+
+<p>
+    @Html.ActionLink("Sửa", "Edit", new {id = Model.IdTin }) | 
+    @Html.ActionLink("Quay lại", "Index")
+</p>

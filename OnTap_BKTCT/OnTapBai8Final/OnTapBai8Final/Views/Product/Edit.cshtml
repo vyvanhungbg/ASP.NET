@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<style>
+    tr td {
+        padding: 12px;
+    }
+</style>
+<h2>Sửa</h2>
+
+@using (Html.BeginForm("Edit", "Product", FormMethod.Post, new { id = Model.ProductID }))
+{
+    @Html.AntiForgeryToken()
+ 
+<table>
+
+    <tr style="display:none">
+        <th>Mã hàng</th>
+        <td>@Html.TextBox("ProductID")<font color="red">@ViewBag.LoiMa</font></td>
+    </tr>
+
+    <tr>
+        <th>Tên hàng</th>
+        <td>@Html.TextBox("ProductName")<font color="red">@ViewBag.LoiTen</font></td>
+    </tr>
+
+    <tr>
+        <th>Mô tả</th>
+        <td>@Html.TextBox("Description")</td>
+    </tr>
+
+
+
+    <tr>
+        <th>Giá nhập</th>
+        <td>@Html.TextBox("PurchasePrice")</td>
+    </tr>
+
+    <tr>
+        <th>Giá bán</th>
+        <td>@Html.TextBox("Price")<font color="red">@ViewBag.LoiGia</font></td>
+    </tr>
+
+
+    <tr>
+        <th>Số lượng</th>
+        <td>@Html.TextBox("Quantity")</td>
+    </tr>
+
+    <tr>
+        <th>Xuất xứ</th>
+        <td>@Html.TextBox("Vintage")</td>
+    </tr>
+
+    <tr>
+        <th>Loại hàng</th>
+        <td>@Html.DropDownList("CatalogyID", null, htmlAttributes: new { @class = "form-control" })</td>
+    </tr>
+
+    <tr>
+        <th>Hình ảnh</th>
+        <td>@Html.TextBox("Image")</td>
+    </tr>
+
+    <tr>
+        <th>Quốc gia</th>
+        <td>@Html.TextBox("Region")</td>
+    </tr>
+
+    <tr>
+        <td align="center"><input value="Sửa" type="submit" /></td>
+    </tr>
+</table>
+}
+@if (ViewBag.Loi != null)
+{
+    <div class="alert alert-danger" role="alert">@ViewBag.Loi</div>
+}
+
+

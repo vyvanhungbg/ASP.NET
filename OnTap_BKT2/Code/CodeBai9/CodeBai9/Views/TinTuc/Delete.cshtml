@@ -1,0 +1,27 @@
+﻿@model CodeBai9.Models.Tintuc
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Bạn chắc chắn muốn xóa?</h3>
+<div>
+    <h4>Theloaitin</h4>
+    <hr />
+    <table>
+        <tr>Tiêu đề</tr>
+        <tr>
+            <td>@Model.Tieudetin</td>
+        </tr>
+    </table>
+    @using (Html.BeginForm()) {
+       
+
+        <div >
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

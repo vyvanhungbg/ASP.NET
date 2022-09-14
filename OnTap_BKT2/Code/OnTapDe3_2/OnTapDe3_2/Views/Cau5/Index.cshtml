@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<style>
+    th,td{
+        padding:12px;
+        border: double 2px black;
+    }
+</style>
+@using(Html.BeginForm("Create", "Cau5", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+<table >
+    <tr>
+        <td colspan="2"><h2>Quản lí hàng</h2></td>
+    </tr>
+
+    <tr>
+        <td>Mã hàng</td>
+        <td>@Html.TextBox("Mahang")</td>
+        @if(ViewBag.LoiMa != null)
+            {
+                <td style="border:none">@ViewBag.LoiMa</td>
+            }
+    </tr>
+
+    <tr>
+        <td>Tên hàng</td>
+        <td>@Html.TextBox("Tenhang")</td>
+        @if (ViewBag.LoiMa != null)
+        {
+            <td style="border:none">@ViewBag.LoiTen</td>
+        }
+    </tr>
+
+    <tr>
+        <td>Loại</td>
+        <td>@Html.DropDownList("Loai")</td>
+        @if (ViewBag.LoiMa != null)
+        {
+            <td style="border:none">@ViewBag.LoiLoai</td>
+        }
+    </tr>
+
+    <tr>
+        <td>Gia</td>
+        <td>@Html.TextBox("Gia")</td>
+        @if (ViewBag.LoiGia != null)
+        {
+            <td style="border:none">@ViewBag.LoiGia</td>
+        }
+    </tr>
+
+    <tr>
+        <td colspan="2" align="center">
+            <input type="submit" value="Thêm" />
+        </td>
+    </tr>
+</table>
+}

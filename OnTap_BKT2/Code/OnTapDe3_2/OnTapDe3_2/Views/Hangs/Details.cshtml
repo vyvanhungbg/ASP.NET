@@ -1,0 +1,42 @@
+﻿@model OnTapDe3_2.Models.Hang
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Xem chi tiết</h2>
+
+<div>
+    <h4>Thông tin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tenhang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tenhang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Loai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Loai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.Mahang.Trim() }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>
